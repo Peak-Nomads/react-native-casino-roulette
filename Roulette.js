@@ -48,7 +48,7 @@ class Roulette extends Component {
   }
 
 
-  play = () => {
+  play = (index) => {
     const { enableUserRotate, onRotate, onRotateChange, duration, easing } = this.props;
 
     const { options, turns } = this.props;
@@ -57,8 +57,8 @@ class Roulette extends Component {
     + (options.length*turns);                    
     // const nextItem = random;
     // const nextItem = 0 + (6 * 3)
-    const nextItem = 0 + options.length * 3
-    console.log('-----------next item', nextItem, activeItem);
+    // const nextItem = index + options.length * 3
+    const nextItem = index + 8 * 5
 
     this.state._animatedValue.setValue(activeItem);
     let animation = Animated.timing(this.state._animatedValue, { toValue: nextItem, easing, duration, useNativeDriver: true })          
@@ -85,7 +85,11 @@ class Roulette extends Component {
     const displayOptions = options && options.length > 0 && options[0] && React.isValidElement(options[0]);
 
     return (
-      <View>
+      <View
+        style={{
+          // backgroundColor: "aqua"
+        }}
+      >
         
         <Animated.View
           {...this.panResponder.panHandlers}
@@ -96,7 +100,7 @@ class Roulette extends Component {
             customStyle
           ]}
         >
-          <ImageBackground width={radius} height={radius} style={{width:radius, height: radius, zIndex:100}} source={background}>
+          <ImageBackground width={radius} height={radius} style={{width:"100%", height: "100%", zIndex:100}} source={background}>
           {displayOptions && Children.map(options, (child, index) =>
               <RouletteItem
                 item={child}
