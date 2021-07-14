@@ -114,7 +114,12 @@ class Roulette extends Component {
           </ImageBackground>
           
         </Animated.View>
-        <Image source={marker} resizeMode="contain" style={[styles.marker,{zIndex:9999,top: markerTop, width:markerWidth, left: (radius/2) -(markerWidth/2)}, markerStyle ]}/>
+        <Image source={marker} 
+// resizeMode="contain" 
+style={[styles.marker,{zIndex:9999,
+                       
+//                      top: markerTop, 
+                       width:markerWidth, left: (radius/2) -(markerWidth/2)}, markerStyle ]}/>
         
         {centerImage &&
           <Image source={centerImage} resizeMode="contain" style={[styles.marker,{zIndex:9999,top: centerTop, width:centerWidth, left: (radius/2) -(centerWidth/2) },centerStyle ]}/>
