@@ -6,7 +6,10 @@ const styles = StyleSheet.create({
     alignItems: 'center'    
   },
   marker:{
-    position: 'absolute'    
+    position: 'absolute',
+        top: 0,
+    height: undefined,
+    aspectRatio: 1
   }
 });
 
