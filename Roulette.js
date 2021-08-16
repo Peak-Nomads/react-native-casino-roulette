@@ -58,8 +58,9 @@ class Roulette extends Component {
     // const nextItem = random;
     // const nextItem = 0 + (6 * 3)
     // const nextItem = index + options.length * 3
-    const nextItem = index + 8 * 5
-
+    let targetIndex = 8 - index
+    const nextItem = targetIndex + 8 * 5;
+    
     this.state._animatedValue.setValue(activeItem);
     let animation = Animated.timing(this.state._animatedValue, { toValue: nextItem, easing, duration, useNativeDriver: true })          
     onRotateChange("start");
